@@ -1,0 +1,6 @@
+flake8
+isort
+autopep8
+radon
+pip-licenses
+pygount
