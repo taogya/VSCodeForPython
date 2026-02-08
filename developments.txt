@@ -1,6 +1,7 @@
 flake8
 isort
 autopep8
+pyright
 radon
 pip-licenses
 pygount
