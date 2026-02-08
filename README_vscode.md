@@ -2,23 +2,43 @@
 Python開発用 VSCode環境ファイル
 
 ## 便利なコマンド
-- 仮想環境構築 <br>
+- 仮想環境構築  
+    ```bash
+    python -m venv venv
     ```
-    $ python -m venv venv
+- 依存関係インストール  
+    ```bash
+    pip install -r requirements.txt
     ```
-- インストール済みPythonライブラリのライセンス一覧 <br>
+- 型チェック（Pylance互換 / strict）  
+    ```bash
+    pyright
     ```
-    $ pip-licenses -f csv > pip-licenses.csv
+- flake8（E501 / W503 / W504 無視）  
+    ```bash
+    flake8 src --ignore=E501,W503,W504
     ```
-- vscode 拡張機能一覧表示 <br>
+- isort（設定ファイル使用）  
+    ```bash
+    isort src --settings-file .isort.cfg --check
     ```
-    $ code --list-extensions > extensions_list.txt
+- autopep8（E501 / W503 / W504 無視）  
+    ```bash
+    autopep8 -ir src --ignore=E501,W503,W504
     ```
-- 実行コード数カウント <br>
+- 循環的複雑度  
+    ```bash
+    radon cc -s src
     ```
-    $ pygount --format=summary --suffix=py app
+- 実行コード数カウント  
+    ```bash
+    pygount --format=summary --suffix=py src
     ```
-- 循環的複雑度 <br>
+- インストール済みPythonライブラリのライセンス一覧  
+    ```bash
+    pip-licenses -f csv > pip-licenses.csv
     ```
-    $ radon cc -s app
+- VS Code拡張機能一覧  
+    ```bash
+    code --list-extensions > extensions_list.txt
     ```
